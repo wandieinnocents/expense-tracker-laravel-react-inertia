@@ -32,6 +32,8 @@ class EmailVerificationTest extends TestCase
 
     public function test_unverified_users_are_redirected_to_the_email_verification_prompt(): void
     {
+        $this->markTestSkipped('Email verification is temporarily disabled (User no longer implements MustVerifyEmail).');
+
         $user = User::factory()->unverified()->create();
 
         $response = $this->actingAs($user)->get(route('appearance.edit'));
