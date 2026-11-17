@@ -1,5 +1,16 @@
 import { Link } from '@inertiajs/react';
-import { BookOpen, FolderGit2, LayoutGrid, Users } from 'lucide-react';
+import {
+    BookOpen,
+    ChartColumn,
+    FolderGit2,
+    LayoutGrid,
+    Receipt,
+    Tags,
+    Users,
+} from 'lucide-react';
+import ExpenseCategoryController from '@/actions/App/Http/Controllers/ExpenseCategoryController';
+import ExpenseController from '@/actions/App/Http/Controllers/ExpenseController';
+import ExpenseReportController from '@/actions/App/Http/Controllers/ExpenseReportController';
 import AppLogo from '@/components/app-logo';
 import { NavFooter } from '@/components/nav-footer';
 import { NavMain } from '@/components/nav-main';
@@ -26,6 +37,21 @@ const mainNavItems = [
         title: 'Users',
         href: users.index(),
         icon: Users,
+    },
+    {
+        title: 'Expenses',
+        href: ExpenseController.index(),
+        icon: Receipt,
+    },
+    {
+        title: 'Expense Categories',
+        href: ExpenseCategoryController.index(),
+        icon: Tags,
+    },
+    {
+        title: 'Expense Reports',
+        href: ExpenseReportController(),
+        icon: ChartColumn,
     },
 ];
 
